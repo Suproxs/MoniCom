@@ -1,0 +1,63 @@
+<!-- Menu flotante centrado -->
+<div class="floating-form">
+  <div class="form-content">
+      <!-- Incluye aquí el formulario -->
+      <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+          <div class="md:col-span-5">
+              <label for="full_name">Full Name</label>
+              <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.full_name" />
+          </div>
+          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+            <div class="md:col-span-5">
+                <label for="full_name">Full Name</label>
+                <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.full_name" />
+            </div>
+            <div class="md:col-span-5">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.email" placeholder="email@domain.com" />
+            </div>
+            <!-- Agrega más campos de formulario aquí -->
+            <div class="md:col-span-3">
+                <label for="address">Address / Street</label>
+                <input type="text" name="address" id="address" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.address" />
+            </div>
+            <div class="md:col-span-2">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.city" />
+            </div>
+            <div class="md:col-span-1">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" name="zipcode" id="zipcode" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" [(ngModel)]="form.zipcode" />
+            </div>
+          <!-- El resto de los campos de formulario aquí -->
+
+          <div class="md:col-span-5 text-right">
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()">Submit</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Estilos CSS -->
+<style>
+  /* Estilo del menú flotante centrado */
+  .floating-form {
+      position: fixed; /* Fijar el formulario */
+      top: 50%; /* Centrar verticalmente */
+      left: 50%; /* Centrar horizontalmente */
+      transform: translate(-50%, -50%); /* Centrar el elemento */
+      width: 500px; /* Ancho del formulario */
+      background-color: white; /* Fondo blanco */
+      border: 1px solid #ccc; /* Borde */
+      border-radius: 8px; /* Bordes redondeados */
+      padding: 20px; /* Espaciado interno */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+      z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  }
+
+  /* Estilo del contenido del formulario */
+  .form-content {
+      display: flex;
+      flex-direction: column;
+  }
+</style>
