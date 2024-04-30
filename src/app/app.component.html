@@ -1,12 +1,15 @@
-<div>
-  <app-navbar/>
-  <div class="main-container flex">
-    <div class="sidebar-container w-1/4">
-      <app-sidebar/>
-    </div>
-    <div class="content-container w-3/4">
-      <router-outlet/>
+@if (currentPath != '/login') {
+  <div>
+    <app-navbar/>
+    <div class="flex main-container">
+      <div class="w-1/4 sidebar-container">
+        <app-sidebar/>
+      </div>
+      <div class="w-3/4 content-container">
+        <router-outlet/>
+      </div>
     </div>
   </div>
-</div>
-<asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>
+} @else {
+  <router-outlet/>
+}
